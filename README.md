@@ -3,7 +3,7 @@
   
 ![Stocks Phot](https://th.bing.com/th/id/R.ca30b038bdb3da11d2602d6a117fa151?rik=yfDcBEXZGafG1A&riu=http%3a%2f%2findustrywired.b-cdn.net%2fwp-content%2fuploads%2f2021%2f03%2fPicture2-1.jpg&ehk=96lskTCqintebQxgyHiCXyvEU0945v18X3AfQxGYim4%3d&risl=&pid=ImgRaw&r=0) 
 
-https://miro.medium.com/max/1400/1*v1fzsfJW-x9RwaB4a2CkRQ.jpeg
+![Stocks Phot](https://miro.medium.com/max/1400/1*v1fzsfJW-x9RwaB4a2CkRQ.jpeg)
   
 # <p align="center"> **Arbitrage_Scanner**
 
