@@ -9,6 +9,7 @@
 
 ## The objective of this project is to create a RoboAdvisor that returns the best token-pair to buy and sell between different decentralized exchanges (DEX), allowing the users to find opportunities on the various price differences, so they can convert or swap tokens maximizing the profit.
 
+ 
 ## We are getting live data using API keys, using AWS to store data in S3 buckets, using Amazon Lex to build the RoboAdvisor and Lambda to run the code.
 
 
@@ -25,10 +26,10 @@ You will need a Meta Mask account and be able to use Uniswap and Kyber DEX to ex
 
    
 ## Datasets and software needed:
-* [AWS Management Console]
-* [metamask.io]   
-* [app.uniswap.org]
-* [kyberswap.com]
+* AWS Management Console
+* metamask.io   
+* app.uniswap.org
+* kyberswap.com
 
   
 ## Collaborators for this project include:   
@@ -37,5 +38,5 @@ You will need a Meta Mask account and be able to use Uniswap and Kyber DEX to ex
 * github.com/Maurolp15
 
   
-Other Resources and contributors include:  
+## Other Resources and contributors include:  
 [UM fintech](https://bootcamp.miami.edu/fintech/)
