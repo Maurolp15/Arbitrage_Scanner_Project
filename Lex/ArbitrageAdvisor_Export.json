@@ -1,0 +1,220 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "ArbitrageAdvisor",
+    "version": "1",
+    "intents": [
+      {
+        "rejectionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "I will be pleased to assist you in the future"
+            }
+          ]
+        },
+        "name": "RecommendArbitrage",
+        "version": "22",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:134700836165:function:arbitrageToken",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "I want to make money with crypto exchange",
+          "I am interested in crypto arbitrage",
+          "I would like to exchange crypto",
+          "Where can I buy and sell crypto",
+          "I want to take advantage of crypto arbitrage"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "dex",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "DEFAULT_OBFUSCATION",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Available DEX are: Uniswap and Kyber Would you like to continue?"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"https://cdn1.iconfinder.com/data/icons/linecon/512/tick-1024.png\",\"subTitle\":\"y\",\"title\":\"Yes\",\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"}]},{\"imageUrl\":\"https://cdn1.iconfinder.com/data/icons/essential-free/48/42-Wrong-1024.png\",\"subTitle\":\"n\",\"title\":\"No\",\"buttons\":[{\"text\":\"No\",\"value\":\"No\"}]}]}",
+              "maxAttempts": 1
+            },
+            "priority": 5,
+            "defaultValueSpec": {
+              "defaultValueList": [
+                {
+                  "defaultValue": "availableDex"
+                }
+              ]
+            },
+            "name": "availableDex"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.DATE",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What is your date of birth?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 3,
+            "name": "birthday"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.US_FIRST_NAME",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Thank you for using my service! What is your first name?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "firstName"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.US_LAST_NAME",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What is your last name?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "lastName"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "meta",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "DEFAULT_OBFUSCATION",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Do you have a MetaMask Account?"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"https://cdn1.iconfinder.com/data/icons/linecon/512/tick-1024.png\",\"subTitle\":\"y\",\"title\":\"Yes\",\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"}]},{\"imageUrl\":\"https://cdn1.iconfinder.com/data/icons/essential-free/48/42-Wrong-1024.png\",\"subTitle\":\"n\",\"title\":\"No\",\"buttons\":[{\"text\":\"No\",\"value\":\"No\"}]}]}",
+              "maxAttempts": 1
+            },
+            "priority": 4,
+            "defaultValueSpec": {
+              "defaultValueList": [
+                {
+                  "defaultValue": "metaAcct"
+                }
+              ]
+            },
+            "name": "metaAccount"
+          }
+        ],
+        "confirmationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Would you like me to search for the best possible option to trade now?"
+            }
+          ],
+          "maxAttempts": 3
+        },
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-east-1:134700836165:function:arbitrageToken",
+          "messageVersion": "1.0"
+        }
+      }
+    ],
+    "slotTypes": [
+      {
+        "name": "dex",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No",
+            "synonyms": [
+              "n"
+            ]
+          },
+          {
+            "value": "Yes",
+            "synonyms": [
+              "y"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "meta",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No",
+            "synonyms": [
+              "n"
+            ]
+          },
+          {
+            "value": "Yes",
+            "synonyms": [
+              "y"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      }
+    ],
+    "voiceId": "Salli",
+    "childDirected": false,
+    "locale": "en-US",
+    "idleSessionTTLInSeconds": 300,
+    "clarificationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, can you please repeat that?"
+        }
+      ],
+      "maxAttempts": 5
+    },
+    "abortStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, I could not understand. Goodbye."
+        }
+      ]
+    },
+    "detectSentiment": false,
+    "enableModelImprovements": false
+  }
+}
