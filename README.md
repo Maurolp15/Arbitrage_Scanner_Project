@@ -1,6 +1,6 @@
 # Project 2
 
-![Stocks Phot](https://miro.medium.com/max/1400/1*v1fzsfJW-x9RwaB4a2CkRQ.jpeg)
+   ![Stocks Phot](https://miro.medium.com/max/1400/1*v1fzsfJW-x9RwaB4a2CkRQ.jpeg)
   
 # <p align="center"> **Arbitrage_Scanner**
 
