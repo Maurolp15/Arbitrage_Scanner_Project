@@ -1,10 +1,7 @@
-# Project 2
+# <p align="center"> **Arbitrage Scanner**
 
 
 ![Stocks Phot](https://miro.medium.com/max/1400/1*v1fzsfJW-x9RwaB4a2CkRQ.jpeg)
-
-  
-# <p align="center"> **Arbitrage Scanner**
 
 
 ## The objective of this project is to create a RoboAdvisor that returns the best token-pair to buy and sell between different decentralized exchanges (DEX), allowing the users to find opportunities on the various price differences, so they can convert or swap tokens maximizing the profit.
